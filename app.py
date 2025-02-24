@@ -1,5 +1,5 @@
 import streamlit as st
-from landing_generator import LLMEnhancedAnalyzer, get_search_results
+from lg import LLMEnhancedAnalyzer, get_search_results
 from datetime import datetime
 import time
 from dotenv import load_dotenv
