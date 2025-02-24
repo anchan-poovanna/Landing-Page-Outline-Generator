@@ -1,0 +1,6 @@
+streamlit==1.32.0
+python-dotenv==1.0.0
+beautifulsoup4==4.12.2
+openai==1.12.0
+requests==2.31.0
+firecrawl==0.1.0  # Replace with actual version if different 
