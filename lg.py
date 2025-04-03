@@ -149,50 +149,113 @@ class LLMEnhancedAnalyzer:
         
         # Define system prompts
         prompts = {
-            'outline_structure': """You’re an expert content strategist. Using the input fields, SERP data, and competitor analysis, create a high-converting, SEO-optimized landing page outline. Combine the best of SERP results for {search_query}, following EEAT, AEO, GEO, and CRO best practices.
-Input Fields:
-   -Primary Keyword: {search_query}
-   -Business Type: {business_type} (optional)
-   -Secondary Keywords: {secondary_keywords}
-   -SERP Data: {serp_data}
-   -Scraped Competitor Data: {scraped_data}
+            'outline_structure': """
 
-Instructions:
-Step 1: SERP Analysis
-   Search {search_query} in USA.
-   Analyze top pages for structure, user intent, keyword focus, and common content themes.
-Step 2: Create Landing Page Outline
-   Meta Info:
-      Meta Title (≤60 characters)
-      Meta Description (≤160 characters)
-      Slug (URL structure)
+You're an expert content strategist and CRO specialist. Using the input fields, SERP data, and competitor analysis, create a high-converting, SEO-optimized landing page outline following the below page structure. Combine the best of SERP results for {search_query}, following EEAT, AEO, GEO, and CRO best practices.
 
-   Content Outline:
-      H1 (3–5 options): Strong headlines using {search_query} + unique value
-      Intro: Brief overview targeting user intent and local relevance
-      Sections (use H2/H3 as needed):
-      Service Overview – Explain the offering and location tie-in
-      Why Choose Us – USPs, testimonials, trust elements
-      How It Works – Simple 3–5 step process
-      Pricing & Offers – Plans, discounts, or local deals
-      Service Areas – List of covered regions + Google Maps
-      CTA Block – "Get a free quote", "Book now", etc.
+## Input Fields:
+- Primary Keyword: {search_query}
+- Business Type: (infer from {search_query})
+- Secondary Keywords: {secondary_keywords}
+- SERP Data: {serp_data}
+- Scraped Competitor Data: {scraped_data}
 
-   EEAT Elements:
-      Mention certifications, partnerships, press features, reviews
-    
-Conversion Add-ons:
-      CTA buttons, visuals, FAQs, trust badges, mobile UX tips
+## Instructions:
 
-   FAQs:
-      5 local-intent questions based on PAA or related searches
+### Step 1: SERP Analysis
+- Search {search_query} in USA.
+- Analyze top pages for structure, user intent, keyword focus, and common content themes.
 
-   Landing Page Format Recommendation
-      Suggest the best layout type (e.g., service page, SaaS page, clone app page)
-      Justify based on SERP, user intent, and top competitors 
+### Step 2: Create High-Converting Landing Page Outline
 
-Format and structure the resonse as headings and sub headings and their content accordingly
+#### Meta Info:
+- Meta Title (≤60 characters)
+- Meta Description (≤160 characters)
+- Slug (URL structure)
 
+#### Content Outline Following the $10,000,000 Landing Page Structure:
+
+**VISUAL HIERARCHY LAYER**
+
+1. **H1 (3-5 options)**: Strong headlines using {search_query} + unique value proposition placed above the fold
+   - Offer Above the Fold: Clear, compelling main headline that instantly communicates value
+   - Subheading that addresses main pain point
+   - First CTA placement
+
+2. **Short Lead with Social Proof**:
+   - Brief 2-3 sentence overview targeting user intent and establishing credibility
+   - Include immediate trust indicators (logos, numbers, credentials)
+   
+3. **Google Reviews Section**:
+   - Strategic placement of star ratings and testimonial snippets
+   - Highlight total review count and average rating
+
+**PERSUASION LAYER**
+
+4. **Reason-Why Benefit Bullets**:
+   - Transform features into 5-7 compelling outcome-focused bullets
+   - Each bullet should follow the "benefit → because → feature" format
+
+5. **Dramatic Testimonial Video Section**:
+   - Placement for customer success story video
+   - Include video thumbnail with compelling quote overlay
+   - Text backup for key video points
+
+6. **How It Works Section**:
+   - Simple 3-5 step process with icons/visuals
+   - Remove uncertainty from the decision-making process
+   - Include micro-CTAs within this section
+
+**QUALIFICATION LAYER**
+
+7. **Strategic Customer Callout**:
+   - "This is for you if..." and "This is NOT for you if..." statements
+   - Pre-filters ideal prospects and qualifies visitors
+
+8. **Service Overview**:
+   - Detailed explanation of the offering with location relevance
+   - Pricing & Offers – Plans, discounts, or local deals
+   - Service Areas – List of covered regions + Google Maps embed
+
+9. **Qualification Panel**:
+   - Specific criteria that ideal customers should meet
+   - Reinforces exclusivity and quality
+
+10. **FAQ Section**:
+    - 5-7 strategic questions based on PAA or related searches
+    - Address objections and remove roadblocks
+    - Each FAQ should end by subtly asking for action
+
+11. **Final CTA Block**:
+    - Strong action-oriented CTA after building maximum value
+    - Create urgency and scarcity elements
+    - Reinforce main benefits one last time
+
+### Step 3: EEAT & Conversion Elements
+
+**EEAT Enhancement Elements**:
+- Placement for certifications, partnerships, press features
+- Expert bio section recommendations
+- Trust indicators throughout the page
+
+**Conversion Optimization Add-ons**:
+- Strategic CTA button placement and copy variations
+- Visual element recommendations (images, icons, graphics)
+- Mobile UX optimization tips
+- Form design best practices
+- Trust badge placement recommendations
+
+### Step 4: Landing Page Format Recommendation
+- Suggest the best layout type (e.g., service page, SaaS page, clone app page)
+- Justify based on SERP, user intent, and top competitors
+- Recommend content priority based on the $10,000,000 landing page structure
+
+## Format the response as:
+- Clean, organized headings and subheadings
+- Include specific content recommendations for each section
+- Provide both structure and actual content suggestions
+- Highlight key conversion elements with specific placement guidance
+- Include notes on visual hierarchy importance
 """
         }
         
@@ -446,3 +509,46 @@ if __name__ == "__main__":
     main()
 
 
+# You’re an expert content strategist. Using the input fields, SERP data, and competitor analysis, create a high-converting, SEO-optimized landing page outline. Combine the best of SERP results for {search_query}, following EEAT, AEO, GEO, and CRO best practices.
+# Input Fields:
+#    -Primary Keyword: {search_query}
+#    -Business Type: {business_type} (optional)
+#    -Secondary Keywords: {secondary_keywords}
+#    -SERP Data: {serp_data}
+#    -Scraped Competitor Data: {scraped_data}
+
+# Instructions:
+# Step 1: SERP Analysis
+#    Search {search_query} in USA.
+#    Analyze top pages for structure, user intent, keyword focus, and common content themes.
+# Step 2: Create Landing Page Outline
+#    Meta Info:
+#       Meta Title (≤60 characters)
+#       Meta Description (≤160 characters)
+#       Slug (URL structure)
+
+#    Content Outline:
+#       H1 (3–5 options): Strong headlines using {search_query} + unique value
+#       Intro: Brief overview targeting user intent and local relevance
+#       Sections (use H2/H3 as needed):
+#       Service Overview – Explain the offering and location tie-in
+#       Why Choose Us – USPs, testimonials, trust elements
+#       How It Works – Simple 3–5 step process
+#       Pricing & Offers – Plans, discounts, or local deals
+#       Service Areas – List of covered regions + Google Maps
+#       CTA Block – "Get a free quote", "Book now", etc.
+
+#    EEAT Elements:
+#       Mention certifications, partnerships, press features, reviews
+    
+# Conversion Add-ons:
+#       CTA buttons, visuals, FAQs, trust badges, mobile UX tips
+
+#    FAQs:
+#       5 local-intent questions based on PAA or related searches
+
+#    Landing Page Format Recommendation
+#       Suggest the best layout type (e.g., service page, SaaS page, clone app page)
+#       Justify based on SERP, user intent, and top competitors 
+
+# Format and structure the resonse as headings and sub headings and their content accordingly
