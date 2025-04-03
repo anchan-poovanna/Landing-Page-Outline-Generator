@@ -180,7 +180,8 @@ Step 2: Create Landing Page Outline
 
    EEAT Elements:
       Mention certifications, partnerships, press features, reviews
-      Conversion Add-ons:
+    
+Conversion Add-ons:
       CTA buttons, visuals, FAQs, trust badges, mobile UX tips
 
    FAQs:
@@ -189,6 +190,9 @@ Step 2: Create Landing Page Outline
    Landing Page Format Recommendation
       Suggest the best layout type (e.g., service page, SaaS page, clone app page)
       Justify based on SERP, user intent, and top competitors 
+
+Format and structure the resonse as headings and sub headings and their content accordingly
+
 """
         }
         
