@@ -149,76 +149,46 @@ class LLMEnhancedAnalyzer:
         
         # Define system prompts
         prompts = {
-            'outline_structure': """You are an expert content strategist. Using the provided input fields, SERP data, and competitor analysis, create a comprehensive, SEO-optimized landing page outline. The output should integrate localized details, conversion best practices, and EEAT signals.
-
+            'outline_structure': """You’re an expert content strategist. Using the input fields, SERP data, and competitor analysis, create a high-converting, SEO-optimized landing page outline. Combine the best of SERP results for {search_query}, following EEAT, AEO, GEO, and CRO best practices.
 Input Fields:
-- Primary Keyword: {search_query} (e.g., "Hire carpenters in Texas")
-- Location: {location} (e.g., specific city, state, or region)
-- Business Type: {business_type} (Optional; if not provided, infer from the primary keyword)
-- Secondary Keywords: {secondary_keywords} (Additional related search terms)
-- Article Intent: {intent} (E.g., informational, transactional, commercial)
-- SERP Data: {serp_data} (Organic results, PAA questions, related searches)
-- Scraped Competitor Data: {scraped_data} (Insights from top-ranking competitor content)
+   -Primary Keyword: {search_query}
+   -Business Type: {business_type} (optional)
+   -Secondary Keywords: {secondary_keywords}
+   -SERP Data: {serp_data}
+   -Scraped Competitor Data: {scraped_data}
 
-Instructions for AI:
-Step 1: Conduct a Localized Web Search
-  - Analyze the top-ranking pages for "{search_query}" in "{location}".
-  - Identify common themes, user intent, competitor strategies, and frequently used subtopics.
+Instructions:
+Step 1: SERP Analysis
+   Search {search_query} in USA.
+   Analyze top pages for structure, user intent, keyword focus, and common content themes.
+Step 2: Create Landing Page Outline
+   Meta Info:
+      Meta Title (≤60 characters)
+      Meta Description (≤160 characters)
+      Slug (URL structure)
 
-Step 2: Generate the Landing Page Outline with SEO-Optimized Structure
-1. Meta Information:
-   - Title (H1): Craft a compelling headline that incorporates "{search_query}" and a unique value proposition.
-   - Meta Title: Create an SEO-friendly title including "{search_query}".
-   - Meta Description: Write a click-worthy summary that enhances CTR.
-   - URL Structure: Propose an optimized URL format (e.g., "https://www.example.com/{location}/{service}").
+   Content Outline:
+      H1 (3–5 options): Strong headlines using {search_query} + unique value
+      Intro: Brief overview targeting user intent and local relevance
+      Sections (use H2/H3 as needed):
+      Service Overview – Explain the offering and location tie-in
+      Why Choose Us – USPs, testimonials, trust elements
+      How It Works – Simple 3–5 step process
+      Pricing & Offers – Plans, discounts, or local deals
+      Service Areas – List of covered regions + Google Maps
+      CTA Block – "Get a free quote", "Book now", etc.
 
-2. Section Breakdown:
-   - Provide a structured content outline with hierarchical headings (H2s and H3s).
-   - Include sections such as:
-     • Service Overview: Describe the service and its local relevance.
-     • Differentiators: Explain why to choose this service (include unique selling points, testimonials, and trust signals).
-     • Process Overview: Detail the steps (e.g., consultation, execution, delivery).
-     • Pricing & Availability: Outline pricing options, special offers, or discounts (if applicable).
-     • Service Area: Highlight local expertise and nearby regions.
-     • Call-to-Action: Insert a strong CTA to prompt immediate engagement.
+   EEAT Elements:
+      Mention certifications, partnerships, press features, reviews
+      Conversion Add-ons:
+      CTA buttons, visuals, FAQs, trust badges, mobile UX tips
 
-3. Localized EEAT Elements:
-   - Authority: Mention certifications, partnerships, or media mentions.
-   - Trust: Include local testimonials, case studies, and Google My Business reviews.
-   - Expertise: Provide location-specific insights and solutions.
+   FAQs:
+      5 local-intent questions based on PAA or related searches
 
-4. Conversion-Optimized CTAs:
-   - Integrate clear, action-driven calls-to-action (e.g., "Get a Free Quote in {location} Today", "Call Now for Immediate Assistance", "Schedule a Consultation in {location}").
-
-5. Additional Optimizations:
-   - Suggest embedding Google Maps, internal linking to related services, mobile optimization, and inclusion of high-quality images.
-
-Expected Output Format:
-Meta title: [60 chars max]
-Meta description: [160 chars max]
-Slug: [URL-friendly]
-Outline:
-H1: [Provide 3-5 headline options]
-Introduction: [Brief overview of approach and key points]
-[Detailed section breakdown with H2s and H3s as needed]
-Conclusion: [Summarize key selling points and reinforce CTA]
-FAQ:
-1. [Question 1]
-2. [Question 2]
-3. [Question 3]
-4. [Question 4]
-5. [Question 5]
-
-Writing Guidelines:
-- Word count target: [Based on competitor analysis]
-- Content tone: Professional and engaging
-- Placement for statistics/data, expert quotes, visuals, and content upgrades
-- Key takeaways and internal/external linking strategy
-
-Landing Page Format Prediction:
-Based on SERP analysis, competitor data, and "{search_query}", predict the optimal landing page format (e.g., "Lead Generation Page", "Informational Service Page") and provide a justification:
-Justification:
-- [Explain why this format is ideal based on user search behavior, content structures of top-ranking pages, and competitor insights]  
+   Landing Page Format Recommendation
+      Suggest the best layout type (e.g., service page, SaaS page, clone app page)
+      Justify based on SERP, user intent, and top competitors 
 """
         }
         
