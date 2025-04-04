@@ -150,112 +150,109 @@ class LLMEnhancedAnalyzer:
         # Define system prompts
         prompts = {
             'outline_structure': """
+You're an expert content strategist and CRO specialist. Using the input fields, SERP data, and competitor analysis, create a high-converting, SEO-optimized landing page outline following the page structure below. Combine the best of SERP results for {search_query}, aligning with EEAT, AEO, GEO, and CRO best practices. Include definitions, comparisons, and how-to query handling where relevant.
+Input Fields:
+    Primary Keyword: {search_query}
+    Business Type: (infer from {search_query})
+    Secondary Keywords: {secondary_keywords}
+    SERP Data: {serp_data}
+    Scraped Competitor Data: {scraped_data}
+Instructions:
+✅ Step 1: SERP Analysis
+    Search {search_query} targeting the USA market.
+    Analyze the top-ranking pages (organic results, paid ads, featured snippets).
+    Understand page structure, user intent, keyword variations, formatting style, and the presence of trust signals (EEAT).
+✅ Step 2: High-Converting Landing Page Outline
+    Meta Info:
+    Meta Title (≤60 characters)
+    Meta Description (≤160 characters)
+    Slug (URL structure)
+    
+Content Outline – Based on $10M Landing Page Framework:
 
-You're an expert content strategist and CRO specialist. Using the input fields, SERP data, and competitor analysis, create a high-converting, SEO-optimized landing page outline following the below page structure. Combine the best of SERP results for {search_query}, following EEAT, AEO, GEO, and CRO best practices.
+🎯 VISUAL HIERARCHY LAYER
+H1 (3–5 options) – Powerful headlines using {search_query} + unique value prop
+Main Offer Above the Fold: Clear, compelling headline with transformation-focused benefit
+Supporting Subhead: Highlights key pain point or challenge
+First CTA Button: Action-oriented copy (e.g., “Get Started Today”)
+Short Lead with Social Proof
+2–3 sentence overview targeting intent
+Immediate trust indicators (stats, logos, media mentions)
+Google Reviews Widget Section
+Star ratings + testimonial carousel
+“Rated 4.9/5 by 1,200+ customers”–style data snippet
 
-## Input Fields:
-- Primary Keyword: {search_query}
-- Business Type: (infer from {search_query})
-- Secondary Keywords: {secondary_keywords}
-- SERP Data: {serp_data}
-- Scraped Competitor Data: {scraped_data}
 
-## Instructions:
+🔥 PERSUASION LAYER
+Reason-Why Benefit Bullets (5–7 points)
+Format each bullet as:
+✅ Outcome → because → Feature
+Example: Save hours of project time because our drag-and-drop interface simplifies every task.
+Dramatic Testimonial Video Section
+One video with emotional/financial outcome
+Include thumbnail with quote overlay
+Add 2–3 key takeaways as text highlights
+How It Works (3–5 Steps)
+Step-by-step process visual
+Include micro-CTAs after each step
+Handles “how-to” query intent (e.g., “How do I get started with [product/service]?”)
 
-### Step 1: SERP Analysis
-- Search {search_query} in USA.
-- Analyze top pages for structure, user intent, keyword focus, and common content themes.
 
-### Step 2: Create High-Converting Landing Page Outline
+🔍 QUALIFICATION LAYER
+Strategic Customer Callout
+“This is for you if…”
+“Not for you if…”
+Helps pre-filter unqualified leads
+Service Overview
+Breakdown of what’s included
+Handle “What is [term]?” and definition-based queries clearly
+Location targeting: Include service areas, embed Google Map
+Pricing tiers, special GEO offers, or free trials
+Qualification Panel
+Reinforce who it’s best for (budget, business size, needs)
+Adds exclusivity and value
+FAQs (5–10 Questions)
+Include definition, comparison, and how-to query angles
+5-7 strategic questions based on PAA or related searches from {serp_data}
+Questions in natural language, brief and helpful answers
+Example Qs:
+What is [search_query]?
+How is this different from [competitor]?
+Can I use this service in [city/state]?
+Final CTA Block
+Action-oriented button: “Claim Your Free Demo,” “Book Your Spot,” etc.
+Add urgency: limited-time, slots left, geo-local bonus
+Restate the core value prop with benefit-driven phrasing
 
-#### Meta Info:
-- Meta Title (≤60 characters)
-- Meta Description (≤160 characters)
-- Slug (URL structure)
+✅ Step 3: EEAT & Conversion Boost Elements
+EEAT-Enhancement Suggestions:
+Expert Bio Section (short founder/lead profile)
+Certifications, security badges, partnerships
+“Featured In” media logos
+Conversion Add-ons:
+CTA button variations across the page
+Icons, illustrations, and interactive visual recommendations
+Sticky CTA for mobile
+Form Design:
+Minimize required fields
+Use multi-step if long
+Trust message below (e.g., “No credit card required”)
+Trust Badge Placement:
+Below fold in visual hierarchy
+Repeated at pricing/offer section and final CTA
 
-#### Content Outline Following the $10,000,000 Landing Page Structure:
+✅ Step 4: Format Recommendation
+Layout Type: (e.g., Service Page, SaaS, Product Demo Page, Clone App Page)
+Justification: Based on SERP structure, user search intent, competitor focus
+Content Priority Guide: Which blocks should lead and where to go deeper
 
-**VISUAL HIERARCHY LAYER**
-
-1. **H1 (3-5 options)**: Strong headlines using {search_query} + unique value proposition placed above the fold
-   - Offer Above the Fold: Clear, compelling main headline that instantly communicates value
-   - Subheading that addresses main pain point
-   - First CTA placement
-
-2. **Short Lead with Social Proof**:
-   - Brief 2-3 sentence overview targeting user intent and establishing credibility
-   - Include immediate trust indicators (logos, numbers, credentials)
-   
-3. **Google Reviews Section**:
-   - Strategic placement of star ratings and testimonial snippets
-   - Highlight total review count and average rating
-
-**PERSUASION LAYER**
-
-4. **Reason-Why Benefit Bullets**:
-   - Transform features into 5-7 compelling outcome-focused bullets
-   - Each bullet should follow the "benefit → because → feature" format
-
-5. **Dramatic Testimonial Video Section**:
-   - Placement for customer success story video
-   - Include video thumbnail with compelling quote overlay
-   - Text backup for key video points
-
-6. **How It Works Section**:
-   - Simple 3-5 step process with icons/visuals
-   - Remove uncertainty from the decision-making process
-   - Include micro-CTAs within this section
-
-**QUALIFICATION LAYER**
-
-7. **Strategic Customer Callout**:
-   - "This is for you if..." and "This is NOT for you if..." statements
-   - Pre-filters ideal prospects and qualifies visitors
-
-8. **Service Overview**:
-   - Detailed explanation of the offering with location relevance
-   - Pricing & Offers – Plans, discounts, or local deals
-   - Service Areas – List of covered regions + Google Maps embed
-
-9. **Qualification Panel**:
-   - Specific criteria that ideal customers should meet
-   - Reinforces exclusivity and quality
-
-10. **FAQ Section**:
-    - 5-7 strategic questions based on PAA or related searches
-    - Address objections and remove roadblocks
-    - Each FAQ should end by subtly asking for action
-
-11. **Final CTA Block**:
-    - Strong action-oriented CTA after building maximum value
-    - Create urgency and scarcity elements
-    - Reinforce main benefits one last time
-
-### Step 3: EEAT & Conversion Elements
-
-**EEAT Enhancement Elements**:
-- Placement for certifications, partnerships, press features
-- Expert bio section recommendations
-- Trust indicators throughout the page
-
-**Conversion Optimization Add-ons**:
-- Strategic CTA button placement and copy variations
-- Visual element recommendations (images, icons, graphics)
-- Mobile UX optimization tips
-- Form design best practices
-- Trust badge placement recommendations
-
-### Step 4: Landing Page Format Recommendation
-- Suggest the best layout type (e.g., service page, SaaS page, clone app page)
-- Justify based on SERP, user intent, and top competitors
-- Recommend content priority based on the $10,000,000 landing page structure
-
-## Format the response as:
-- Clean, organized headings and subheadings
-- Include specific content recommendations for each section
-- Provide both structure and actual content suggestions
-- Highlight key conversion elements with specific placement guidance
-- Include notes on visual hierarchy importance
+Optional Enhancements Based on Intent:
+For Definition Queries:
+Add a “What is [term]?” section with glossary-style clarity.
+For Comparison Queries:
+Add side-by-side tables comparing alternatives (e.g., “X vs Y”).
+For How-To Queries:
+Include a step-by-step or process visual in “How It Works” + FAQ entries
 """
         }
         
